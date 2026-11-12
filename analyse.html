@@ -552,6 +552,31 @@ seuls, de démontrer une relation causale entre ces variables et la
 survie.</p>
 </div>
 </div>
+<div id="utilisation-du-package-titanicpackage" class="section level1">
+<h1>5. Utilisation du package TitanicPackage</h1>
+<pre class="r"><code>library(TitanicPackage)
+
+# Taux de survie selon le sexe
+taux_survie(TitanicSurvival, &quot;sex&quot;)</code></pre>
+<pre><code>##   groupe effectif survivants taux_survie
+## 1 female      466        339        72.7
+## 2   male      843        161        19.1</code></pre>
+<pre class="r"><code># Taux de survie selon la classe
+taux_survie(TitanicSurvival, &quot;passengerClass&quot;)</code></pre>
+<pre><code>##   groupe effectif survivants taux_survie
+## 1    1st      323        200        61.9
+## 2    2nd      277        119        43.0
+## 3    3rd      709        181        25.5</code></pre>
+<p>Les résultats obtenus à l’aide de notre package
+<code>TitanicPackage</code> confirment les tendances observées dans
+l’analyse descriptive. Le taux de survie est nettement supérieur chez
+les femmes (72,7 %) par rapport aux hommes (19,1 %).</p>
+<p>La classe des passagers est également associée à la survie : 61,9 %
+des passagers de première classe ont survécu, contre 43,0 % en deuxième
+classe et 25,5 % en troisième classe.</p>
+<p>Ces résultats montrent que le sexe et la classe sont associés à des
+différences importantes de survie parmi les passagers du Titanic.</p>
+</div>
 
 
 

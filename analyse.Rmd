@@ -162,3 +162,21 @@ La comparaison des médianes et de la dispersion permet d'étudier les différen
 Cette analyse descriptive suggère que la survie des passagers du Titanic est associée à plusieurs caractéristiques, notamment le sexe et la classe.
 
 Ces résultats restent descriptifs : ils ne permettent pas, à eux seuls, de démontrer une relation causale entre ces variables et la survie.
+
+
+# 5. Utilisation du package TitanicPackage
+
+```{r utilisation_package}
+library(TitanicPackage)
+
+# Taux de survie selon le sexe
+taux_survie(TitanicSurvival, "sex")
+
+# Taux de survie selon la classe
+taux_survie(TitanicSurvival, "passengerClass")
+```
+Les résultats obtenus à l'aide de notre package `TitanicPackage` confirment les tendances observées dans l'analyse descriptive. Le taux de survie est nettement supérieur chez les femmes (72,7 %) par rapport aux hommes (19,1 %).
+
+La classe des passagers est également associée à la survie : 61,9 % des passagers de première classe ont survécu, contre 43,0 % en deuxième classe et 25,5 % en troisième classe.
+
+Ces résultats montrent que le sexe et la classe sont associés à des différences importantes de survie parmi les passagers du Titanic.
