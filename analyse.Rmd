@@ -1,0 +1,64 @@
+---
+title: "analyse du titanic"
+author: "Kempf Mathilde"
+date: "2026-11-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1. Présentation des données
+
+Le jeu de données TitanicSurvival, disponible dans le package
+carData, contient des informations sur les passagers du Titanic.
+
+L'objectif de cette analyse est d'étudier les caractéristiques
+des passagers et leur survie en fonction de différentes variables.
+
+```{r chargement_donnees}
+# Installer carData uniquement si nécessaire
+if (!requireNamespace("carData", quietly = TRUE)) {
+  install.packages("carData", repos = "https://cloud.r-project.org")
+}
+
+# Charger les données
+data("TitanicSurvival", package = "carData")
+
+# Afficher les premières lignes
+head(TitanicSurvival)
+
+# Examiner la structure des données
+str(TitanicSurvival)
+
+# Dimensions du jeu de données
+dim(TitanicSurvival)
+```
+
+## 2. Statistiques descriptives
+
+Cette partie présente les principales caractéristiques des passagers
+du Titanic : leur survie, leur sexe, leur classe et leur âge.
+
+```{r statistiques_descriptives}
+# Résumé général des variables
+summary(TitanicSurvival)
+
+# Répartition des passagers selon leur survie
+table(TitanicSurvival$survived)
+
+# Répartition des passagers selon leur sexe
+table(TitanicSurvival$sex)
+
+# Répartition des passagers selon leur classe
+table(TitanicSurvival$passengerClass)
+
+# Statistiques descriptives de l'âge
+mean(TitanicSurvival$age, na.rm = TRUE)
+median(TitanicSurvival$age, na.rm = TRUE)
+sd(TitanicSurvival$age, na.rm = TRUE)
+
+# Nombre de valeurs manquantes par variable
+colSums(is.na(TitanicSurvival))
+```
